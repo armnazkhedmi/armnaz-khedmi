@@ -11,45 +11,61 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="30dp">
+            android:orientation="vertical">
 
-            <!-- رأس الصفحة -->
+
+            <!-- HEADER -->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="72dp"
+                android:layout_height="82dp"
                 android:background="#176B87"
                 android:gravity="center_vertical"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp">
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
 
                 <Button
                     android:id="@+id/btnBack"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
+                    android:backgroundTint="#125A71"
                     android:text="‹"
-                    android:textSize="32sp"
                     android:textColor="#FFFFFF"
-                    android:textAllCaps="false"
-                    android:backgroundTint="#125A71"/>
+                    android:textSize="32sp"
+                    android:textAllCaps="false"/>
 
-                <TextView
-                    android:id="@+id/serviceTitle"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="21sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/serviceTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="21sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="أرمناز الخدمي"
+                        android:textColor="#D9EFF4"
+                        android:textSize="11sp"/>
+
+                </LinearLayout>
 
                 <Space
                     android:layout_width="52dp"
@@ -58,7 +74,7 @@
             </LinearLayout>
 
 
-            <!-- محتوى الصفحة -->
+            <!-- CONTENT -->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,24 +82,26 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- بطاقة تعريف الخدمة -->
+
+                <!-- الوصف -->
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="26dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="1dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="24dp">
+                        android:padding="22dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="الخدمة"
+                            android:text="عن الخدمة"
                             android:textColor="#176B87"
                             android:textSize="13sp"
                             android:textStyle="bold"/>
@@ -92,7 +110,7 @@
                             android:id="@+id/serviceDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="9dp"
                             android:lineSpacingExtra="6dp"
                             android:textColor="#17232B"
                             android:textSize="17sp"/>
@@ -102,14 +120,108 @@
                 </com.google.android.material.card.MaterialCardView>
 
 
-                <!-- محتوى الخدمة الديناميكي -->
+                <!-- الوصول السريع -->
 
-                <LinearLayout
-                    android:id="@+id/serviceContent"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:orientation="vertical"/>
+                    android:layout_marginTop="24dp"
+                    android:text="الوصول السريع"
+                    android:textColor="#17232B"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="أدوات مرتبطة بهذه الخدمة"
+                    android:textColor="#71808A"
+                    android:textSize="13sp"/>
+
+
+                <!-- بطاقات الإجراءات -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="112dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="5dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:gravity="center"
+                                android:background="#EAF6F8"
+                                android:text="📍"
+                                android:textSize="23sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="7dp"
+                                android:gravity="center"
+                                android:text="الموقع"
+                                android:textColor="#17232B"
+                                android:textSize="14sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="112dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="5dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:gravity="center"
+                                android:background="#EEF7FF"
+                                android:text="☎️"
+                                android:textSize="21sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="7dp"
+                                android:gravity="center"
+                                android:text="اتصال"
+                                android:textColor="#17232B"
+                                android:textSize="14sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
 
 
                 <!-- حالة الخدمة -->
@@ -123,31 +235,58 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="70dp"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="18dp">
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp">
 
                         <TextView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:gravity="center"
+                            android:background="#EFFAF4"
+                            android:text="✓"
+                            android:textColor="#2E7D5B"
+                            android:textSize="22sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="حالة الخدمة"
-                            android:textColor="#17232B"
-                            android:textSize="15sp"
-                            android:textStyle="bold"/>
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="حالة الخدمة"
+                                android:textColor="#17232B"
+                                android:textSize="14sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="الخدمة متاحة حاليًا"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="● متاحة"
                             android:textColor="#2E7D5B"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textStyle="bold"/>
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
+
 
             </LinearLayout>
 
