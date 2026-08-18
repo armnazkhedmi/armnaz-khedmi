@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7F9"
+    android:layoutDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#176B87"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:text="‹"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:backgroundTint="#125A71"/>
+
+        <TextView
+            android:id="@+id/serviceTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/serviceDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="22dp"
+                android:textColor="#17232B"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
