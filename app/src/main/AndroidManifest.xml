@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArmnazKhedmi">
 
+        <!-- شاشة البداية المتحركة -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
 
             <intent-filter>
@@ -20,6 +21,11 @@
             </intent-filter>
 
         </activity>
+
+        <!-- الشاشة الرئيسية -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
     </application>
 
