@@ -12,488 +12,678 @@
         android:id="@+id/contentScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="82dp"
-        android:fillViewport="true">
+        android:layout_marginBottom="76dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- الترحيب -->
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="22dp"
-                    android:background="#176B87">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="أهلاً بك 👋"
-                        android:textColor="#D9F0F5"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="أرمناز الخدمي"
-                        android:textColor="#FFFFFF"
-                        android:textSize="30sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="خدمات مدينتك بين يديك"
-                        android:textColor="#D9F0F5"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
+            android:orientation="vertical">
 
 
-            <!-- الطقس والصلاة -->
+            <!-- ========================= -->
+            <!-- الرأس الرئيسي -->
+            <!-- ========================= -->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="22dp"
+                android:paddingBottom="24dp"
+                android:background="#176B87">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="112dp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="🌤️"
-                            android:textSize="25sp"/>
-
-                        <TextView
-                            android:id="@+id/weatherCard"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="الطقس&#10;--°"
-                            android:textColor="#17232B"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <Space
-                    android:layout_width="10dp"
-                    android:layout_height="1dp"/>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="112dp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            android:text="أهلاً بك 👋"
+                            android:textColor="#DDF3F7"
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="🕌"
-                            android:textSize="25sp"/>
-
-                        <TextView
-                            android:id="@+id/prayerCard"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="الصلاة&#10;الفجر --"
-                            android:textColor="#17232B"
-                            android:textSize="14sp"
+                            android:layout_marginTop="3dp"
+                            android:text="أرمناز الخدمي"
+                            android:textColor="#FFFFFF"
+                            android:textSize="29sp"
                             android:textStyle="bold"/>
 
                     </LinearLayout>
 
-                </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#125A71">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="🏘️"
+                            android:textSize="25sp"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="كل ما تحتاجه في أرمناز، في مكان واحد."
+                    android:textColor="#E5F5F8"
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
 
-            <!-- زر التحديث -->
+            <!-- ========================= -->
+            <!-- المحتوى -->
+            <!-- ========================= -->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRefresh"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="14dp"
-                android:text="↻  تحديث البيانات"
-                android:textColor="#176B87"
-                android:textSize="15sp"
-                android:textAllCaps="false"
-                app:backgroundTint="#FFFFFF"
-                app:cornerRadius="18dp"
-                app:strokeColor="#176B87"
-                app:strokeWidth="1dp"/>
-
-
-            <!-- عنوان الخدمات -->
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="ماذا تحتاج اليوم؟"
-                android:textColor="#17232B"
-                android:textSize="21sp"
-                android:textStyle="bold"/>
+                android:orientation="vertical"
+                android:padding="16dp">
 
 
-            <!-- شبكة الخدمات -->
+                <!-- الطقس والصلاة -->
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:columnCount="2"
-                android:useDefaultMargins="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🌤️"
+                                android:textSize="28sp"/>
+
+                            <TextView
+                                android:id="@+id/weatherCard"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:text="الطقس\n--°"
+                                android:textColor="#17232B"
+                                android:textSize="15sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="1dp"/>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🕌"
+                                android:textSize="28sp"/>
+
+                            <TextView
+                                android:id="@+id/prayerCard"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:text="الصلاة\nالفجر --"
+                                android:textColor="#17232B"
+                                android:textSize="15sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+
+                <!-- تحديث -->
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnEmergency"
-                    android:layout_width="0dp"
-                    android:layout_height="125dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
+                    android:id="@+id/btnRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#E4F2F5">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:gravity="center_vertical"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp">
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="🚨"
-                            android:textSize="32sp"/>
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="↻"
+                            android:textColor="#176B87"
+                            android:textSize="25sp"/>
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:text="الطوارئ"
-                            android:textColor="#17232B"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnExchange"
-                    android:layout_width="0dp"
-                    android:layout_height="125dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="💱"
-                            android:textSize="32sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:text="أسعار الصرف"
-                            android:textColor="#17232B"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnPharmacy"
-                    android:layout_width="0dp"
-                    android:layout_height="125dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="💊"
-                            android:textSize="32sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:text="الصيدليات"
-                            android:textColor="#17232B"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnWater"
-                    android:layout_width="0dp"
-                    android:layout_height="125dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="🚰"
-                            android:textSize="32sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:text="دور المياه"
-                            android:textColor="#17232B"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnDeaths"
-                    android:layout_width="0dp"
-                    android:layout_height="125dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="🕊️"
-                            android:textSize="32sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:text="الوفيات والعزاء"
-                            android:textColor="#17232B"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:text="تحديث البيانات"
+                            android:textColor="#176B87"
                             android:textSize="15sp"
                             android:textStyle="bold"/>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="تحديث الآن  ›"
+                            android:textColor="#176B87"
+                            android:textSize="13sp"/>
+
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnAlerts"
-                    android:layout_width="0dp"
-                    android:layout_height="125dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="1dp">
+                <!-- العنوان -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="📢"
-                            android:textSize="32sp"/>
+                            android:text="ماذا تحتاج اليوم؟"
+                            android:textColor="#17232B"
+                            android:textSize="22sp"
+                            android:textStyle="bold"/>
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:text="التنبيهات"
-                            android:textColor="#17232B"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:layout_marginTop="3dp"
+                            android:text="اختر الخدمة التي تريدها بسرعة"
+                            android:textColor="#71808A"
+                            android:textSize="13sp"/>
 
                     </LinearLayout>
 
-                </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الكل"
+                        android:textColor="#176B87"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
-            </GridLayout>
+                </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/lastUpdate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="آخر تحديث: لم يتم التحديث بعد"
-                android:textColor="#71808A"
-                android:textSize="12sp"/>
+                <!-- شبكة الخدمات -->
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:columnCount="2"
+                    android:useDefaultMargins="false">
+
+
+                    <!-- الطوارئ -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnEmergency"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:gravity="center"
+                                android:background="#FFF0F0"
+                                android:text="🚨"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:text="الطوارئ"
+                                android:textColor="#17232B"
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="مساعدة سريعة"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <!-- الصرف -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnExchange"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:gravity="center"
+                                android:background="#EEF7FF"
+                                android:text="💱"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:text="أسعار الصرف"
+                                android:textColor="#17232B"
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="أسعار العملات"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <!-- الصيدليات -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnPharmacy"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:gravity="center"
+                                android:background="#EFFAF4"
+                                android:text="💊"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:text="الصيدليات"
+                                android:textColor="#17232B"
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="دليل الصيدليات"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <!-- المياه -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnWater"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:gravity="center"
+                                android:background="#EDF9FF"
+                                android:text="🚰"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:text="دور المياه"
+                                android:textColor="#17232B"
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="مواقع ونقاط المياه"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <!-- الوفيات -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnDeaths"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:gravity="center"
+                                android:background="#F4F2F7"
+                                android:text="🕊️"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:text="الوفيات والعزاء"
+                                android:textColor="#17232B"
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="آخر الإعلانات"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <!-- التنبيهات -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnAlerts"
+                        android:layout_width="0dp"
+                        android:layout_height="135dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:gravity="center"
+                                android:background="#FFF7E8"
+                                android:text="📢"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:text="التنبيهات"
+                                android:textColor="#17232B"
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="آخر الأخبار المهمة"
+                                android:textColor="#71808A"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </GridLayout>
+
+
+                <!-- آخر تحديث -->
+
+                <TextView
+                    android:id="@+id/lastUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="آخر تحديث: لم يتم التحديث بعد"
+                    android:textColor="#87949C"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
 
-    <!-- الشريط السفلي -->
+    <!-- ========================= -->
+    <!-- التنقل السفلي -->
+    <!-- ========================= -->
 
-    <LinearLayout
-        android:id="@+id/bottomNavigation"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="78dp"
+        android:layout_height="76dp"
         android:layout_gravity="bottom"
-        android:background="#FFFFFF"
-        android:elevation="14dp"
-        android:orientation="horizontal"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF">
 
-        <TextView
-            android:id="@+id/navHome"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="⌂&#10;الرئيسية"
-            android:textColor="#176B87"
-            android:textSize="13sp"
-            android:textStyle="bold"/>
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
-        <TextView
-            android:id="@+id/navEmergency"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="🚨&#10;الطوارئ"
-            android:textColor="#71808A"
-            android:textSize="13sp"/>
+            <TextView
+                android:id="@+id/navHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="⌂\nالرئيسية"
+                android:textColor="#176B87"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/navServices"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="🧰&#10;الخدمات"
-            android:textColor="#71808A"
-            android:textSize="13sp"/>
+            <TextView
+                android:id="@+id/navEmergency"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="🚨\nالطوارئ"
+                android:textColor="#71808A"
+                android:textSize="12sp"/>
 
-        <TextView
-            android:id="@+id/navExchange"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="💱&#10;الصرف"
-            android:textColor="#71808A"
-            android:textSize="13sp"/>
+            <TextView
+                android:id="@+id/navServices"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="🧰\nالخدمات"
+                android:textColor="#71808A"
+                android:textSize="12sp"/>
 
-        <TextView
-            android:id="@+id/navSettings"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="⚙️&#10;الإعدادات"
-            android:textColor="#71808A"
-            android:textSize="13sp"/>
+            <TextView
+                android:id="@+id/navExchange"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="💱\nالصرف"
+                android:textColor="#71808A"
+                android:textSize="12sp"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/navSettings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="⚙️\nالإعدادات"
+                android:textColor="#71808A"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </FrameLayout>
