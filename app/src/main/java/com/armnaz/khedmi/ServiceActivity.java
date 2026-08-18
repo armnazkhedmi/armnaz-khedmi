@@ -1,7 +1,6 @@
 package com.armnaz.khedmi;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ServiceActivity extends AppCompatActivity {
 
     private LinearLayout serviceContent;
-    private TextView serviceTitle;
-    private TextView serviceDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +18,10 @@ public class ServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service);
 
         Button back = findViewById(R.id.btnBack);
+        TextView title = findViewById(R.id.serviceTitle);
+        TextView description = findViewById(R.id.serviceDescription);
 
-        serviceTitle = findViewById(R.id.serviceTitle);
-        serviceDescription = findViewById(R.id.serviceDescription);
         serviceContent = findViewById(R.id.serviceContent);
-
-        back.setOnClickListener(v -> finish());
 
         String serviceId =
                 getIntent().getStringExtra("service_id");
@@ -35,295 +30,93 @@ public class ServiceActivity extends AppCompatActivity {
             serviceId = "services";
         }
 
-        loadService(serviceId);
-    }
+        String serviceTitle;
+        String serviceDescription;
 
-    private void loadService(String id) {
-
-        serviceContent.removeAllViews();
-
-        switch (id) {
+        switch (serviceId) {
 
             case "emergency":
-                showEmergency();
+                serviceTitle = "🚨 الطوارئ";
+                serviceDescription =
+                        "الوصول السريع إلى خدمات الطوارئ المهمة.";
                 break;
 
             case "exchange":
-                showExchange();
+                serviceTitle = "💱 أسعار الصرف";
+                serviceDescription =
+                        "متابعة أسعار العملات في أرمناز.";
                 break;
 
             case "pharmacy":
-                showPharmacy();
+                serviceTitle = "💊 الصيدليات";
+                serviceDescription =
+                        "دليل الصيدليات والخدمات الطبية في أرمناز.";
                 break;
 
             case "water":
-                showWater();
+                serviceTitle = "🚰 دور المياه";
+                serviceDescription =
+                        "معلومات نقاط توزيع المياه والخدمات المرتبطة بها.";
                 break;
 
             case "deaths":
-                showDeaths();
+                serviceTitle = "🕊️ الوفيات والعزاء";
+                serviceDescription =
+                        "الإعلانات المتعلقة بالوفيات والعزاء.";
                 break;
 
             case "alerts":
-                showAlerts();
+                serviceTitle = "📢 التنبيهات";
+                serviceDescription =
+                        "آخر التنبيهات والإعلانات المهمة في أرمناز.";
                 break;
 
             default:
-                showGeneralServices();
+                serviceTitle = "🧰 الخدمات";
+                serviceDescription =
+                        "جميع الخدمات التي يقدمها تطبيق أرمناز الخدمي.";
                 break;
         }
+
+        title.setText(serviceTitle);
+        description.setText(serviceDescription);
+
+        addServiceContent(serviceId);
+
+        back.setOnClickListener(v -> finish());
     }
 
-    private void setHeader(
-            String title,
-            String description) {
+    private void addServiceContent(String serviceId) {
 
-        serviceTitle.setText(title);
-        serviceDescription.setText(description);
-    }
+        if (serviceContent == null) {
+            return;
+        }
 
-    private void showEmergency() {
+        serviceContent.removeAllViews();
 
-        setHeader(
-                "🚨 الطوارئ",
-                "الوصول السريع إلى خدمات الطوارئ المهمة في أرمناز."
+        TextView sectionTitle = new TextView(this);
+        sectionTitle.setText("الوصول السريع");
+        sectionTitle.setTextSize(20);
+        sectionTitle.setTextColor(0xFF17232B);
+        sectionTitle.setTypeface(null, 1);
+
+        serviceContent.addView(sectionTitle);
+
+        TextView info = new TextView(this);
+        info.setText(
+                "سيتم تجهيز الأدوات والبيانات الخاصة بهذه الخدمة في المرحلة التالية."
         );
-
-        addSection(
-                "🚑 الإسعاف",
-                "خدمة الإسعاف والطوارئ الطبية."
-        );
-
-        addSection(
-                "🚓 الشرطة",
-                "الوصول السريع إلى الجهات الأمنية."
-        );
-
-        addSection(
-                "🚒 الإطفاء",
-                "خدمات الإطفاء والاستجابة للحوادث."
-        );
-
-        addSection(
-                "📍 أقرب خدمة",
-                "سيتم لاحقًا ربطها بالموقع الجغرافي."
-        );
-    }
-
-    private void showExchange() {
-
-        setHeader(
-                "💱 أسعار الصرف",
-                "أسعار العملات سيتم تحديثها من مصدر بيانات مباشر."
-        );
-
-        addSection(
-                "🇺🇸 الدولار الأمريكي",
-                "USD — البيانات قيد الربط."
-        );
-
-        addSection(
-                "🇹🇷 الليرة التركية",
-                "TRY — البيانات قيد الربط."
-        );
-
-        addSection(
-                "🇪🇺 اليورو",
-                "EUR — البيانات قيد الربط."
-        );
-
-        addSection(
-                "🔄 تحديث الأسعار",
-                "سيتم تفعيل التحديث المباشر عند ربط مصدر البيانات."
-        );
-    }
-
-    private void showPharmacy() {
-
-        setHeader(
-                "💊 الصيدليات",
-                "دليل الصيدليات والخدمات الدوائية في أرمناز."
-        );
-
-        addSection(
-                "🏥 الصيدليات",
-                "سيتم عرض الصيدليات المسجلة في النظام."
-        );
-
-        addSection(
-                "📍 الأقرب إليك",
-                "سيتم استخدام الموقع لإظهار الأقرب."
-        );
-
-        addSection(
-                "🕐 المناوبة",
-                "سيتم عرض الصيدليات المناوبة عند توفر البيانات."
-        );
-    }
-
-    private void showWater() {
-
-        setHeader(
-                "🚰 دور المياه",
-                "معلومات نقاط توزيع المياه والخدمات المرتبطة بها."
-        );
-
-        addSection(
-                "💧 نقاط المياه",
-                "سيتم عرض نقاط توزيع المياه."
-        );
-
-        addSection(
-                "📍 المواقع",
-                "سيتم ربط المواقع بالخريطة."
-        );
-
-        addSection(
-                "📢 آخر تحديث",
-                "ستظهر هنا آخر معلومات التوزيع."
-        );
-    }
-
-    private void showDeaths() {
-
-        setHeader(
-                "🕊️ الوفيات والعزاء",
-                "الإعلانات المتعلقة بالوفيات ومواعيد العزاء."
-        );
-
-        addSection(
-                "📋 آخر الإعلانات",
-                "ستظهر هنا الإعلانات الجديدة."
-        );
-
-        addSection(
-                "🕯️ مواعيد العزاء",
-                "ستظهر هنا تفاصيل مواعيد وأماكن العزاء."
-        );
-    }
-
-    private void showAlerts() {
-
-        setHeader(
-                "📢 التنبيهات",
-                "آخر التنبيهات والإعلانات المهمة."
-        );
-
-        addSection(
-                "🔔 التنبيهات الجديدة",
-                "ستظهر هنا التنبيهات المهمة."
-        );
-
-        addSection(
-                "📰 الأخبار",
-                "سيتم عرض الأخبار المحلية المهمة."
-        );
-
-        addSection(
-                "⚡ عاجل",
-                "التنبيهات العاجلة ستظهر في مقدمة الصفحة."
-        );
-    }
-
-    private void showGeneralServices() {
-
-        setHeader(
-                "🧰 الخدمات",
-                "جميع الخدمات التي يقدمها تطبيق أرمناز الخدمي."
-        );
-
-        addSection(
-                "✨ الخدمات",
-                "اختر الخدمة التي تريد الوصول إليها."
-        );
-    }
-
-    private void addSection(
-            String title,
-            String description) {
-
-        LinearLayout box =
-                new LinearLayout(this);
-
-        box.setOrientation(
-                LinearLayout.VERTICAL
-        );
-
-        box.setPadding(
-                20,
-                18,
-                20,
-                18
-        );
-
-        box.setBackgroundResource(
-                android.R.drawable.dialog_holo_light_frame
-        );
-
-        TextView titleView =
-                new TextView(this);
-
-        titleView.setText(title);
-        titleView.setTextSize(18);
-        titleView.setTextColor(
-                android.graphics.Color.rgb(
-                        23, 35, 43
-                )
-        );
-        titleView.setTypeface(
-                null,
-                android.graphics.Typeface.BOLD
-        );
-
-        TextView descriptionView =
-                new TextView(this);
-
-        descriptionView.setText(description);
-        descriptionView.setTextSize(14);
-        descriptionView.setTextColor(
-                android.graphics.Color.rgb(
-                        99, 113, 122
-                )
-        );
-
-        LinearLayout.LayoutParams titleParams =
-                new LinearLayout.LayoutParams(
-                        -1,
-                        -2
-                );
-
-        descriptionView.setPadding(
-                0,
-                7,
-                0,
-                0
-        );
-
-        box.addView(
-                titleView,
-                titleParams
-        );
-
-        box.addView(
-                descriptionView
-        );
+        info.setTextSize(14);
+        info.setTextColor(0xFF71808A);
 
         LinearLayout.LayoutParams params =
                 new LinearLayout.LayoutParams(
-                        -1,
-                        -2
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
                 );
 
-        params.setMargins(
-                0,
-                0,
-                0,
-                14
-        );
+        params.topMargin = 8;
 
-        serviceContent.addView(
-                box,
-                params
-        );
+        serviceContent.addView(info, params);
     }
 }
