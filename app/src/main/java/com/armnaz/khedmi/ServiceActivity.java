@@ -2,14 +2,11 @@ package com.armnaz.khedmi;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ServiceActivity extends AppCompatActivity {
-
-    private LinearLayout serviceContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +17,6 @@ public class ServiceActivity extends AppCompatActivity {
         Button back = findViewById(R.id.btnBack);
         TextView title = findViewById(R.id.serviceTitle);
         TextView description = findViewById(R.id.serviceDescription);
-
-        serviceContent = findViewById(R.id.serviceContent);
 
         String serviceId =
                 getIntent().getStringExtra("service_id");
@@ -81,42 +76,6 @@ public class ServiceActivity extends AppCompatActivity {
         title.setText(serviceTitle);
         description.setText(serviceDescription);
 
-        addServiceContent(serviceId);
-
         back.setOnClickListener(v -> finish());
-    }
-
-    private void addServiceContent(String serviceId) {
-
-        if (serviceContent == null) {
-            return;
-        }
-
-        serviceContent.removeAllViews();
-
-        TextView sectionTitle = new TextView(this);
-        sectionTitle.setText("الوصول السريع");
-        sectionTitle.setTextSize(20);
-        sectionTitle.setTextColor(0xFF17232B);
-        sectionTitle.setTypeface(null, 1);
-
-        serviceContent.addView(sectionTitle);
-
-        TextView info = new TextView(this);
-        info.setText(
-                "سيتم تجهيز الأدوات والبيانات الخاصة بهذه الخدمة في المرحلة التالية."
-        );
-        info.setTextSize(14);
-        info.setTextColor(0xFF71808A);
-
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                );
-
-        params.topMargin = 8;
-
-        serviceContent.addView(info, params);
     }
 }
