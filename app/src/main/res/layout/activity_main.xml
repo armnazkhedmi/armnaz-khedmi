@@ -1,172 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:fillViewport="true">
+    android:background="#F5F7F9"
+    android:layoutDirection="rtl">
 
-    <LinearLayout
+    <!-- المحتوى -->
+
+    <ScrollView
+        android:id="@+id/contentScroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:layoutDirection="rtl">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="أرمناز الخدمي"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary_dark"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="معلومتك الخدمية في مكان واحد"
-            android:textSize="15sp"
-            android:textColor="@color/text_secondary"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:padding="12dp"
-            android:background="#E6F2F5"
-            android:text="● متصل — البيانات جاهزة للتحديث"
-            android:textSize="14sp"
-            android:textColor="@color/primary_dark"/>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="82dp"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- الترحيب -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="#176B87">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="أهلاً بك 👋"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="أرمناز الخدمي"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="كل ما تحتاجه في أرمناز، في مكان واحد"
+                    android:textColor="#DCEFF4"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <!-- الطقس والصلاة -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/weatherCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:text="🌤️\nالطقس\n--°"
+                    android:textColor="#17232B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/prayerCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:text="🕌\nالصلاة\nالفجر --"
+                    android:textColor="#17232B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <!-- عنوان الخدمات -->
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#FFFFFF"
-                android:text="🌤️&#10;الطقس&#10;--°"
-                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="ماذا تحتاج اليوم؟"
+                android:textColor="#17232B"
+                android:textSize="21sp"
                 android:textStyle="bold"/>
 
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="1dp"/>
+            <!-- شبكة الخدمات -->
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:useDefaultMargins="true">
+
+                <Button
+                    android:id="@+id/btnEmergency"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:text="🚨\nالطوارئ"
+                    android:textSize="17sp"/>
+
+                <Button
+                    android:id="@+id/btnExchange"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:text="💱\nأسعار الصرف"
+                    android:textSize="17sp"/>
+
+                <Button
+                    android:id="@+id/btnPharmacy"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:text="💊\nالصيدلية"
+                    android:textSize="17sp"/>
+
+                <Button
+                    android:id="@+id/btnWater"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:text="🚰\nدور المياه"
+                    android:textSize="17sp"/>
+
+                <Button
+                    android:id="@+id/btnDeaths"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:text="🕊️\nالوفيات والعزاء"
+                    android:textSize="17sp"/>
+
+                <Button
+                    android:id="@+id/btnAlerts"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:text="📢\nالتنبيهات"
+                    android:textSize="17sp"/>
+
+            </GridLayout>
+
+            <!-- آخر تحديث -->
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="1"
+                android:id="@+id/lastUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
                 android:gravity="center"
-                android:background="#FFFFFF"
-                android:text="🕌&#10;مواقيت الصلاة&#10;الفجر --"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:text="آخر تحديث: لم يتم التحديث بعد"
+                android:textColor="#63717A"
+                android:textSize="13sp"/>
 
         </LinearLayout>
 
+    </ScrollView>
+
+    <!-- الشريط السفلي -->
+
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="12dp"
+        android:orientation="horizontal"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp">
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="18dp"
-            android:background="@color/danger"
-            android:text="🚨  مركز الطوارئ"
-            android:textColor="#FFFFFF"
-            android:textSize="21sp"
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="🏠\nالرئيسية"
+            android:textColor="#176B87"
+            android:textSize="13sp"
             android:textStyle="bold"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="الإسعاف"
-            android:textSize="17sp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="الدفاع المدني"
-            android:textSize="17sp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="الشرطة"
-            android:textSize="17sp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="طوارئ الكهرباء"
-            android:textSize="17sp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="المشفى والعيادات"
-            android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/navEmergency"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="🚨\nالطوارئ"
+            android:textColor="#63717A"
+            android:textSize="13sp"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="18dp"
-            android:background="#FFFFFF"
-            android:text="💱  أسعار الصرف&#10;&#10;الدولار / الليرة السورية: --&#10;الليرة التركية / الليرة السورية: --&#10;الدولار / الليرة التركية: --&#10;&#10;آخر تحديث: لا توجد بيانات"
-            android:textSize="17sp"
-            android:textColor="@color/text_primary"/>
+            android:id="@+id/navServices"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="🧰\nالخدمات"
+            android:textColor="#63717A"
+            android:textSize="13sp"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="18dp"
-            android:background="#FFFFFF"
-            android:text="💊  الصيدلية المناوبة&#10;&#10;اسم الصيدلي: --&#10;الهاتف: --&#10;الحالة: لا توجد بيانات"
-            android:textSize="17sp"/>
+            android:id="@+id/navExchange"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="💱\nالصرف"
+            android:textColor="#63717A"
+            android:textSize="13sp"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="18dp"
-            android:background="#FFFFFF"
-            android:text="🚰  دور المياه في أرمناز&#10;&#10;سيتم عرض الأماكن المفتوحة حاليًا."
-            android:textSize="17sp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="18dp"
-            android:background="#FFFFFF"
-            android:text="📢  التنبيهات الخدمية&#10;&#10;لا توجد تنبيهات حاليًا."
-            android:textSize="17sp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="18dp"
-            android:background="#E7E7E7"
-            android:text="🕊️  الوفيات والعزاء&#10;&#10;لا توجد بطاقة عزاء فعالة حاليًا."
-            android:textSize="17sp"/>
-
-        <Button
-            android:id="@+id/btnRefresh"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="24dp"
-            android:text="🔄 تحديث البيانات"
-            android:textSize="17sp"/>
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="⚙️\nالإعدادات"
+            android:textColor="#63717A"
+            android:textSize="13sp"/>
 
     </LinearLayout>
 
-</ScrollView>
+</FrameLayout>
